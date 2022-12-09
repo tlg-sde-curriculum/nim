@@ -11,4 +11,4 @@ has_children: true
 
 ## Class diagram
 
-![Model class diagram]({{ /assets/images/model.svg | relative_url }})
+![Model class diagram]({{ "/assets/images/model.svg" | relative_url }})
