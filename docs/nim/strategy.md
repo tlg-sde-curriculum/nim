@@ -15,9 +15,15 @@ parent: "Game of Nim"
 {:toc}
 </details>
 
-## Optimal strategy
+## Winning position
 
-The optimal strategy for normal play is to end each move so that the remaining items in all piles form a _nim sum_ of zero. The nim sum is the _binary digital sum without carries_ of the numbers of remaining items in all piles, or the _bitwise exclusive OR_ of those numbers. 
+In normal play, the practical strategy to win at the game of _Nim_ is for a player to make a move that results in the remaining piles of items to have a _nim sum_ of zero. A player who's able to execute such a move in their turn is guaranteed to have such a move available in the next turn as well; as long as they continue to make moves satisfying this condition, a win can be forced.
+
+Conversely, a player who must take their turn when the nim sum of the remaining piles of items is already zero has no winning move; whatever move they make can be answered by a winning move from the opponent.
+
+## Nim sum
+
+The nim sum is the _binary digital sum without carries_ of the numbers of remaining items in all piles, or the _bitwise exclusive OR_ of those numbers. 
 
 ### Bitwise XOR
 
@@ -61,17 +67,17 @@ In other words, the bitwise XOR of any number of terms can be computed by taking
 
 Fortunately, for an implementation in Java (or any C-derived language), the bitwise XOR is a simple matter of using the `^` operator. For example, the expression `3 ^ 5 ^ 7` computes the bitwise XOR (or nim sum) of those three values. (Verify that computation in JShell.)
 
-### Move selection algorithm
+## Move selection algorithm
 
 The optimal strategy for selecting a move in normal play can be expressed in pseudocode by this algorithm:
 
-#### Given
+### Given
 
 * Let $n$ be the number of piles (heaps).
 
 * Let $P$ be the quantities in the $n$ piles---that is, $p_0$ is the number remaining in pile $0$, $p_1$ the number remaining in pile $1$, and so on.
 
-#### Operators
+### Operators
 
 In addition to the usual arithmetic operators, the steps below use two more that may be unfamiliar to you:
 
@@ -80,7 +86,7 @@ In addition to the usual arithmetic operators, the steps below use two more that
 | $\oplus$ | Exclusive XOR (as described above). |
 | $\gets$ | Assignment (like `=` in C-derived languages, `:=` in Pascal-derived languages, etc.). |
 
-#### Steps
+### Steps
 
 1. Let $M \gets (0, 0, \ldots, 0)$.
 
