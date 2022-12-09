@@ -9,14 +9,8 @@ has_children: true
 # {{ page.title }}
 {:.no_toc}
 
-<details markdown="block">
-  <summary>Contents</summary>
-* TOC
-{:toc}
-</details>
-
 ## Introduction
 
-_Nim_ is a mathematical game for two players, with very simple rules. There are many variations of the game, but almost all of them involve the players removing markers or tokens (coins, poker chips, pretzels) from play, following strict rules constraining this removal, until all have been removed.
+_Nim_ is a mathematical game for two players, with very simple rules. There are many variations of the game, but almost all of them involve the players removing markers or tokens (coins, pebbles, poker chips, peanuts, pretzels,etc.) from play, following strict rules constraining this removal, until all have been removed.
 
-Nim is most often played as a _mis&egrave;re_ game, in which the player removing the last item loses the game. In this project, we'll implement the _normal play_ game, in which the player removing the last item wins.
+Nim is most often played as a _mis&egrave;re_ game, in which the player removing the last item loses the game. In this project, we'll implement the _normal play_ game, in which the player removing the last item wins. (In fact, the winning strategy is almost identical for the mis&egrave;re form, until close to the end of the game.)
