@@ -1,0 +1,7 @@
+remote_theme: nickbenn-workshop/just-the-docs
+
+title: Nim
+
+aux_links_new_tab: true
+# aux_links:
+#  Assignment:
