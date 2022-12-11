@@ -20,4 +20,4 @@ In addition to packages for each of model, view, and controller, another package
 
 This is a diagram showing the classes for a possible implementation of the game. While we suggest that an implementor follow this diagram fairly closely, many details are left up to the implementor. (For example, note that the diagram shows no private fields.)
 
-![Model class diagram]({{ "/assets/images/model.svg" | relative_url }})
+![Model class diagram]({{ "/assets/images/nim.svg" | relative_url }})

@@ -98,25 +98,25 @@ In addition to the usual arithmetic operators, the steps below use two more that
 
 3. For each $p_i$ in $P$:
 
-    > 1. $S \gets S \oplus p_i$.
-    >
+    > * $S \gets S \oplus p_i$.
+    
     (When this step is complete, $S$ is the nim sum of $P$.)
 
 4. If $S \ne 0$:
 
-    > 1. For each $p_i$ in $P$:
+    > * For each $p_i$ in $P$:
     >
-    >    > 1. If $S \oplus p_i \le p_i$:
+    >    > * If $S \oplus p_i \le p_i$:
     >    >
     >    >    > *  $m_i = p_i - (S \oplus p_i)$.
     >
-    > 2. Select $j$ at random, such that $m_j > 0$.
+    > * Select $j$ at random, such that $m_j > 0$.
     >
     >    (That is, select a random non-zero element of $M$.)
     >
-    > 3. The optimal move is to remove the quantity $m_j$ from pile $j$.
+    > * The optimal move is to remove the quantity $m_j$ from pile $j$.
        
     otherwise:
 
-    > 4. No optimal move exists. Any move will permit the other play to make an optimal move in turn; thus, a move may be selected at random, or some other heuristic may be used. 
+    > * No optimal move exists. Any move will permit the other play to make an optimal move in turn; thus, a move may be selected at random, or some other heuristic may be used. 
 
