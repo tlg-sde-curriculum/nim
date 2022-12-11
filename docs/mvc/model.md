@@ -25,18 +25,28 @@ Beyond defining the possible states of the game, this enum must also implement f
 
 ### `Pile`
 
-This class represents a single pile of markers or tokens. Initially, all of these are available for removal (via a `remove(int)` method, which should only accessible from inside the `model` package). As markers are removed, this class needs to keep track of how many have been removed and how many remain, making this information available via accessor methods.
+This class represents a single pile of markers or tokens. Initially, all of these are available for removal (via a `remove(int)` method, which should only accessible from inside the `model` package). As markers are removed, this class needs to keep track of how many have been removed and how many remain, making this information available via accessor methods. In addition, a `boolean isEmpty()` method should be provided for convenience: this method must return `true` if there are no markers remaining (i.e. all markers have been removed).
 
-The constructor for this class must allow the  
+The constructor for this class must use a parameter that allows invocation with a specified initial quantity remaining.
 
 ### `Game`
 
-Encapsulates a single game, composed of a `List<Pile>` and a `State`. Its fields must not be modifiable directly by consumers, nor should mutator methods be provided; instead, a `play(Pile, int)` method must be implemented to apply a specified move to the game and update its state.
+Encapsulates a single game, composed of (minimally) a `List<Pile>` and a `State`. Its fields must not be modifiable directly by consumers, nor should mutator methods be provided; instead, a `play(Pile, int)` method must be implemented to apply a specified move to the game and update its state.
 
 In addition to accessor methods for the `List<Pile>` and a `State`, an `isFinished()` convenience method should be implemented to allow a consumer (e.g. a controller class) to check the completion state of the game following each move.
 
-This class must provide a constructor that supports initializing and instance 
+This class must provide a constructor that supports initializing an instance in a given non-terminal state and with specified initial pile sizes---all specifiable via parameters.
+
+### `Session`
+
+This is the simplest of the model classes: It simply encapsulates a tally of wins and losses, with `win()` and `lose()` methods to increment those tallies, and accessors to make the tallies available to consumers.
 
 ## UML diagram
+
+The diagram below shows constructors and methods, including accessors. However, it does not show any private fields; it's up to the implementor to decide (using the diagram along with the summaries above) what fields will be needed in order to support the required functionality, and whether any given accessor method will return a field value or the result of a more complex computation. 
+
+For example, in the `Pile` class, it would probably make sense to have `remaining` and `removed` fields of the `int` type; `getRemaining()` and `getRemoved()` would simply return the values of such fields. On the other hand, the `isEmpty()` method doesn't necessarily require a corresponding `boolean empty` field; instead, it could return the `boolean` result of the `remaining == 0` expression.
+
+The open lock icon is used to indicate that the corresponding constructor, method, or field is public; a small open circle indicates the package-private access level.
 
 ![Model class diagram]({{ "/assets/images/model.svg" | relative_url }})
