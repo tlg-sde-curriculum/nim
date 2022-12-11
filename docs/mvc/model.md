@@ -41,7 +41,7 @@ This class must provide a constructor that supports initializing an instance in 
 
 This is the simplest of the model classes: It simply encapsulates a tally of wins and losses, with `win()` and `lose()` methods to increment those tallies, and accessors to make the tallies available to consumers.
 
-## UML diagram
+## UML class diagram
 
 The diagram below shows constructors and methods, including accessors. However, it does not show any private fields; it's up to the implementor to decide (using the diagram along with the summaries above) what fields will be needed in order to support the required functionality, and whether any given accessor method will return a field value or the result of a more complex computation. 
 
