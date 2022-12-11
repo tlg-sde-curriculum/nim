@@ -21,11 +21,11 @@ The view classes are responsible for constructing `String` representations of th
 
 ## Classes
 
-All of these classes should be in the `com.tlglearning.nim.model` package. Optionally, the implementor should consider whether any of these classes can and should be made inner or static nested classes within others.
-
 ### `GameView`
 
 ### `PileView`
+
+### `MoveView`
 
 ### `TallyView`
 
