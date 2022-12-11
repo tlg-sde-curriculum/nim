@@ -15,7 +15,7 @@ The model classes are responsible for maintaining the internal state of the game
 
 ## Classes
 
-All of these classes should be in the `com.tlglearning.nim.model` package. Optionally, students should consider whether any of these classes can and should be made inner or static nested classes within others.
+All of these classes should be in the `com.tlglearning.nim.model` package. Optionally, the implementor should consider whether any of these classes can and should be made inner or static nested classes within others.
 
 ### `State`
 
