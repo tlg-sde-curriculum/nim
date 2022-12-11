@@ -9,11 +9,17 @@ has_children: true
 # {{ page.title }}
 {:.no_toc}
 
+<details markdown="block">
+  <summary>Contents</summary>
+* TOC
+{:toc}
+</details>
+
 ## Overview
 
 Implementation of the _Nim_ game program will employ a separation of concerns between groups of classes and interfaces, with each group in its own package(s). More specifically, a simplified _Model-View-Controller_ (_MVC_) approach will be used.
 
-Because the game is to implemented for text-mode play, all user interaction will be synchronous; thus, the concerns handled by the view will be limited to constructing `String` representations of the piles of objects, as well as constructing `String` user prompts. Receiving and processing the user input will be handled by the conroller classes, invoking methods on view classes as appropriate. (We might characterize this as a _passive-view_ variation of MVC.)
+Because the game is to be implemented for text-mode play, all user interaction will be synchronous; thus, the concerns handled by the view will be limited to constructing `String` representations of the piles of objects, as well as constructing `String` user prompts. Receiving and processing the user input will be handled by the conroller classes, invoking methods on view classes as appropriate. (We might characterize this as a _passive-view_ variation of MVC.)
 
 In addition to packages for each of model, view, and controller, another package will hold the code that implements the computer's strategy for play.
 
@@ -21,4 +27,4 @@ In addition to packages for each of model, view, and controller, another package
 
 This is a diagram showing the classes for a possible implementation of the game. While we suggest that an implementor follow this diagram fairly closely, many details are left up to the implementor. (For example, note that the diagram shows no private fields.)
 
-![Model class diagram]({{ "/assets/images/nim.svg" | relative_url }})
+![Class diagram]({{ "/assets/images/nim.svg" | relative_url }})

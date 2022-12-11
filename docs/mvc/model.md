@@ -1,6 +1,6 @@
 ---
 title: Model
-nav_order: 3
+nav_order: 1
 parent: "Separation of concerns"
 ---
 
@@ -8,6 +8,12 @@ parent: "Separation of concerns"
 
 # {{ page.title }}
 {:.no_toc}
+
+<details markdown="block">
+  <summary>Contents</summary>
+* TOC
+{:toc}
+</details>
 
 ## Overview
 
@@ -37,9 +43,17 @@ In addition to accessor methods for the `List<Pile>` and a `State`, an `isFinish
 
 This class must provide a constructor that supports initializing an instance in a given non-terminal state and with specified initial pile sizes---all specifiable via parameters.
 
-### `Session`
+### `Move`
 
-This is the simplest of the model classes: It simply encapsulates a tally of wins and losses, with `win()` and `lose()` methods to increment those tallies, and accessors to make the tallies available to consumers.
+Instances of this class serve to package the information about a move in a form that usable by the `Game` class, as well as the `MoveView` class; they are not retained by `Game` after the state is updated as a result of the move, nor by the `MoveView` class after a `String` representation of the move is consructed.
+
+For the purpose described above, the class encapsulates a 1-based pile number (used by `MoveView`), a reference to the corresponding `Pile` (used by `Game`), and the quantity to be removed from the pile (used by both `MoveView` and `Game`). 
+
+Instances of this class are instantiated by a `Strategy` implementation (for moves made by the computer) and by `SessionController.GameController` (for moves made by the human player).
+
+### `Tally`
+
+This class is precisely what it sounds like: It encapsulates a tally of wins and losses, with `win()` and `lose()` methods to increment those tallies, and accessors to make the tallies available to consumers.
 
 ## UML class diagram
 

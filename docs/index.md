@@ -4,7 +4,6 @@ nav_order: 1
 ---
 
 {% include abbreviations.md %}
-{% assign javadocs = site.aux_links.Javadocs %}
 
 # {{ page.title }}
 {:.no_toc}
